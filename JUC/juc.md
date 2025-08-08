@@ -393,6 +393,7 @@ ThreadLocal类用于提供线程内部的局部变量。
 #### 内部结构
 ![alt text](image-17.png)
 
+
 > ThreadLocal类实例只是Map中Key的引子，Map中的Key的值为ThreadLocal类实例的弱引用。
 
 > ThreadLocalMap解决hash冲突：线性探测法。 
