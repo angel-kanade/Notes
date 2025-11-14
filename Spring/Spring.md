@@ -94,7 +94,7 @@
 
 ## 注解配置
 ### 注入
-- `@Confiuration(proxyBeanMethods=true)`：proxyBeanMethods=true可以保障调用此方法得到对象是从容器中获取的，原理是CGLIB依照单例模式产生了代理对象
+- `@Configuration(proxyBeanMethods=true)`：proxyBeanMethods=true可以保障调用此方法得到对象是从容器中获取的，原理是CGLIB依照单例模式产生了代理对象
 - 配置文件转化为类
 ![alt text](image-9.png)
 - 直接在Bean类上注解
@@ -339,7 +339,7 @@ public class DBConfig {
 @Transactional
 public class BookService {
     @Autowired
-    private sqlMapper sqlMapper; 
+    private BookMapper sqlMapper; 
 
     public void addBook() {
         sqlMapper.addBook();

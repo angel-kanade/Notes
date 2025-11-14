@@ -48,6 +48,7 @@
 public class Main {
     public static void main(String[] args) {
         // 下边两种都会存入串池
+        // 但s1 != s2 堆中会创建一个与StringTable中"world"相同的对象赋值给s2
         String s1 = "hello";
         String s2 = new String("world");
         // new StringBuilder().append(s1).append(s2).toString();
@@ -71,7 +72,7 @@ public class Main {
 - 详见代码注释，s3最终是堆中对象的引用，堆中对象`"helloworld"`不会放入串池（可以用`intern`方法放入）。
 - 对于s4，语句等价`String s4 = "hello" + "world";`，因为都是常量，编译器可以优化。
 
-> JDK1.7及之前的版本，StringTable在堆中，其实也是存放了一个个String对象。
+> StringTable主要存放**编译期就确定的字符串字面量**。
 
 ### 直接内存
 #### 基本特点
